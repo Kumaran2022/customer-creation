@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Creation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+    <div class="container">
+        <!-- SideMenu  -->
+        <div class="side-menu">
+            <div class="side-icon-list" id="sideMenu">
+            </div>
+        </div>
+        <div class="tab-menu lg-none">
+            <div class="side-icon-list" id="tabMenu">
+            </div>
+        </div>
+        <div class="dash-container">
+            <!-- Header -->
+            <div class="header d_flex">
+                <div class="header-left d_flex">
+                    <img id="logo" src="./assets/header/Toggle.svg" alt="">
+                    <div id="back" class="d_flex pointer hide" style="gap: 7px;font-weight: 600;" onclick="back()">
+                        <img src="./assets/dashboard/chevron.png" alt="" width="10px">
+                        <p>Back</p>
+                    </div>
+                    <div class="search">
+                        <div style="padding-top: 5px;">
+                            <img src="./assets/header/search.png" alt="" width="18px">
+                        </div>
+                        <input type="text" placeholder="Search" onchange="search(this)">
+                    </div>
+                </div>
+                <div class="header-right d_flex md-none">
+                    <div>
+                        <img src="./assets/header/bell.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./assets/header/Configuration.png" alt="">
+                    </div>
+                    <div class="d_flex header-drop-down">
+                        <img src="./assets/header/ABS Logo.png" alt="">
+                        <p style="margin: 0;">ABS erp</p>
+                        <img src="./assets/header/chevron-down.svg" alt="">
+                    </div>
+                    <div class="d_flex header-drop-down" style="padding: 8px 10px;">
+                        <img src="./assets/header/unsplash_GEVWW-Y7MRA.png" alt="" width="30px">
+                        <p style="margin: 0;">Manoj kumar</p>
+                        <img src="./assets/header/chevron-down.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- List -->
+            <div class="dashboard" id="dashboard">
+                <p style="margin-bottom: 10px;font-weight: 600;font-size: 16px;">Customer Creation</p>
+                <div class="cards d_flex" id="cards">
+
+                </div>
+                <div class="d_flex buttons">
+                    <div class="d_flex md-wrap" style="gap: 10px;">
+                        <div class="search">
+                            <div style="padding-top: 5px;">
+                                <img src="./assets/header/search.png" alt="" width="18px">
+                            </div>
+
+                            <input type="text" placeholder="Search" onchange="search(this)">
+                        </div>
+                        <button class="d_flex white-button pointer" onclick="toggleDashboard('customer-form')">
+                            <img src="./assets/dashboard/plus.png" alt="" width="18px">
+                            <p>Customer</p>
+                        </button>
+                        <button class="d_flex black-button pointer">
+                            <img src="./assets/dashboard/upload.png" alt="" width="18px">
+                            <p>Import Customers</p>
+                        </button>
+                    </div>
+                    <div class="d_flex" style="gap: 10px;">
+                        <button class="d_flex white-button pointer">
+                            <img src="./assets/dashboard/printer.png" alt="" width="18px">
+                            <p>Print</p>
+                        </button>
+                        <button class="d_flex white-button pointer">
+                            <img src="./assets/dashboard/download.png" alt="" width="18px">
+                            <p>Download</p>
+                        </button>
+                    </div>
+                </div>
+                <!-- table -->
+                <div style="overflow: auto;">
+                    <div class="d_flex table-head">
+                        <div>Customer ID</div>
+                        <div>Customer Company</div>
+                        <div>Phone Number</div>
+                        <div>E-mail ID</div>
+                        <div>Address</div>
+                        <div>City</div>
+                        <div>Pincode</div>
+                        <div>State</div>                       
+                        <div>POC Name</div>
+                        <div>Job Title</div>
+                        <div>Authorised Person</div>
+                    </div>
+                    <div id="table-body">
+                    </div>
+                </div>
+            </div>
+            <!-- Form -->
+            <div id="customer-form" class="hide">
+                <p style="margin-bottom: 10px;font-weight: 600;font-size: 16px;">Customer Creation</p>
+                <div class="d_flex tabs">
+                    <div class="tab active">
+                        Company Details
+                    </div>
+                    <div class="tab">
+                        Billing & Shipping Details
+                    </div>
+                    <div class="tab">
+                        KYC Documents
+                    </div>
+                </div>
+                <div>
+                    <div class="" id="form-fields">
+
+                    </div>
+                </div>
+                <div class="d_flex submit-section" style="gap: 10px;">
+                    <button class="d_flex white-button pointer" onclick="back()">
+                        <p>Cancel</p>
+                    </button>
+                    <button class="d_flex black-button pointer" onclick="submitForm()">
+                        <p>Submit</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">
+        Submitted Successfully
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
